@@ -12,6 +12,7 @@ public class Main {
         MenuItem pasta = new MenuItem("It's a pasta!", "Main Course", 13.99, "Made from scratch pasta topped with your choice of protein, veggies, and sauce.", false);
         MenuItem salad = new MenuItem("House Salad", "Appetizer", 6.99, "Fresh chopped romain lettuce tossed with sliced tomatoes, red onions, black olives, parmesan cheese, and homemade italian dressing.", false);
         MenuItem tiramisu = new MenuItem("Tiramisu", "Dessert", 8.99, "A delicious slice of Tiramisu made from scratch with locally roasted coffee.", true);
+
         items.add(pizza);
         items.add(pasta);
         items.add(salad);
