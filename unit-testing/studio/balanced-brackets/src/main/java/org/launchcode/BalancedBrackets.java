@@ -1,37 +1,56 @@
 package org.launchcode;
-public class BalancedBrackets {
-    /*
-     * The function BalancedBrackets should return true if and only if
-     * the input string has a set of "balanced" brackets.
-     *
-     * That is, whether it consists entirely of pairs of opening/closing
-     * brackets (in that order), none of which mis-nest. We consider a bracket
-     * to be square-brackets: [ or ].
-     *
-     * The string may contain non-bracket characters as well.
-     *
-     * These strings have balanced brackets:
-     *  "[LaunchCode]", "Launch[Code]", "[]LaunchCode", "", "[]"
-     *
-     * While these do not:
-     *   "[LaunchCode", "Launch]Code[", "[", "]["
-     *
-     * @param str - to be validated
-     * @return true if balanced, false otherwise
-     */
-    public static boolean hasBalancedBrackets(String str) {
-        int brackets = 0;
-        for (char ch : str.toCharArray()) {
-            for (int i = 0; i < str.length(); i++) {
-                if (i == '[') {
-                    brackets++;
-                } else if (i == ']') {
-                    brackets--;
-                } else if (brackets != 0) {
-                    return false;
-                }
-            }
-        }
-        return brackets == 0;
+
+import java.util.ArrayList;
+import java.util.Arrays;
+
+public class Case {
+    private ArrayList<Flavor> flavors = new ArrayList<>();
+    private ArrayList<Cone> cones = new ArrayList<>();
+    private ArrayList<Topping> toppings = new ArrayList<>(); // Add a field for toppings
+
+    public Case(){
+        Cone cone1 = new Cone("Waffle", 1.25, new ArrayList<>(Arrays.asList( "gluten")));
+        Cone cone2 = new Cone("Sugar", 0.75, new ArrayList<>(Arrays.asList( "gluten")));
+        Cone cone3 = new Cone("Wafer", 0.50, new ArrayList<>(Arrays.asList( "gluten")));
+        Cone cone4 = new Cone("Bowl", 0.05, new ArrayList<>(Arrays.asList( "none")));
+        cones.add(cone1);
+        cones.add(cone2);
+        cones.add(cone3);
+        cones.add(cone4);
+
+        Flavor flavor1 = new Flavor("Vanilla", 0.75, new ArrayList<>(Arrays.asList( "dairy")));
+        Flavor flavor2 = new Flavor("Chocolate", 0.75, new ArrayList<>(Arrays.asList( "dairy")));
+        Flavor flavor3 = new Flavor("Red Velvet", 0.85, new ArrayList<>(Arrays.asList( "dairy", "red #5")));
+        Flavor flavor4 = new Flavor("Rocky Road", 0.85, new ArrayList<>(Arrays.asList( "dairy", "nuts", "gelatin")));
+        Flavor flavor5 = new Flavor("Strawberry Sorbet", 0.50, new ArrayList<>(Arrays.asList( "strawberry")));
+        flavors.add(flavor1);
+        flavors.add(flavor2);
+        flavors.add(flavor3);
+        flavors.add(flavor4);
+        flavors.add(flavor5);
+    }
+
+    public ArrayList<Flavor> getFlavors() {
+        return flavors;
+    }
+
+    public ArrayList<Cone> getCones() {
+        return cones;
+    }
+
+    public ArrayList<Topping> getToppings() { // Getter method for toppings
+        return toppings;
+    }
+
+    public void setFlavors(ArrayList<Flavor> flavors) {
+        this.flavors = flavors;
+    }
+
+    public void setCones(ArrayList<Cone> cones) {
+        this.cones = cones;
+    }
+
+    public void addTopping(Topping topping) {
+        toppings.add(topping);
     }
 }
