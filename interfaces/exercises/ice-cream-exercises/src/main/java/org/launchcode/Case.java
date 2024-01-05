@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class Case {
     private ArrayList<Flavor> flavors = new ArrayList<>();
     private ArrayList<Cone> cones = new ArrayList<>();
-    private ArrayList<Topping> toppings = new ArrayList<>(); // Add a field for toppings
+    private final ArrayList<Topping> toppings = new ArrayList<>(); // Add a field for toppings
 
     public Case(){
         Cone cone1 = new Cone("Waffle", 1.25, new ArrayList<>(Arrays.asList( "gluten")));
